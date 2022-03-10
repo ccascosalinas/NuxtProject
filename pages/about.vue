@@ -21,7 +21,7 @@ section
       b-field(label='Animated')
         b-field
           b-radio-button(v-model='animated' native-value='fade')
-            | Fade
+            | Fadea
           b-radio-button(v-model='animated' native-value='slide')
             | Slide
       b-field(label='Pause Type')
@@ -29,15 +29,15 @@ section
           option(value='is-white') is-white
           option(value='is-dark') is-dark
           option(value='is-primary') is-primary
-  b-carousel.m-5(v-model='carousel' :animated='animated' :has-drag='drag' :autoplay='autoPlay' :pause-hover='pauseHover' :pause-info='pauseInfo' :pause-info-type='pauseType' :interval='interval' :repeat='repeat' @change='info($event)')
-    b-carousel-item(v-for='(carousel, i) in carousels' :key='i')
-      section(:class='`hero is-medium is-${carousel.color} is-bold`')
-        .hero-body.has-text-centered
-          h1.title {{carousel.title}}
-          b-input(:placeholder='carousel.title')
-          p
-            | A link that 
-            a(href='https://rockcontent.com/es/blog/valores-de-una-empresa/' target='_blank') goes to find more values
+    b-carousel.m-5(v-model='carousel' :animated='animated' :has-drag='drag' :autoplay='autoPlay' :pause-hover='pauseHover' :pause-info='pauseInfo' :pause-info-type='pauseType' :interval='interval' :repeat='repeat' @change='info($event)')
+      b-carousel-item(v-for='(carousel, i) in carousels' :key='i')
+        section(:class='`hero is-medium is-${carousel.color} is-bold`')
+          .hero-body.has-text-centered
+            h1.title {{carousel.title}}
+            b-input(:placeholder='carousel.title')
+            p
+              | A link that 
+              a(href='https://rockcontent.com/es/blog/valores-de-una-empresa/' target='_blank') goes to find more values
 
 </template>
 
@@ -56,7 +56,7 @@ export default {
             interval: 3000,
             carousels: [
                 { title: 'Love', color: 'dark' },
-                { title: 'Slide 2', color: 'primary' },
+                { title: 'Patience', color: 'primary' },
                 { title: 'Responsibility', color: 'info' },
                 { title: 'Goodness', color: 'success' },
                 { title: 'Perseverance', color: 'warning' },

@@ -1,18 +1,17 @@
 <template lang='pug'>
   div.nieto
     h1 Grandchild Component: {{numero}}
-    h2 Name: {{nombre1}}
-
-  
+    b-button(type="is-danger" @click='$emit("decrease")') -
+    input(type='text' @input="event => $emit('setParentText', event.target.value)")
 </template>
 <script>
 export default {
-  props:['numero'], 
+  props:['numero'],
+  emits: ['decrease', 'setParentText'],
   data(){
     return{
-      nombre1:'Luis'
     }
-  }
+  },
 }
   
 </script>

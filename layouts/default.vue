@@ -1,14 +1,14 @@
 <template lang='pug'>
   div
-    navBar-component
-  
+    NavbarComponent
+    Nuxt
 </template>
 
 <script>
-import navBar from '~/components/navBar'
+import navBarComponent from '~/components/navBarComponent.vue'
 export default {
   components: {
-    'navBar-component': navBar
+    'NavbarComponent': navBarComponent
   }
 }
 </script>

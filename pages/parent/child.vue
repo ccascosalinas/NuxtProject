@@ -1,27 +1,18 @@
-<template>
-  <div class="hijo">
-    <h1>Child component: {{numero}} </h1>
-    <h2>Name: {{nombre}}</h2>
-    <li>
-      <NuxtLink to="/parent/child/grandChild">Call grandchild</NuxtLink>
-    </li>
-    <NuxtChild :numero='numeroPadre' />
-  </div>
+<template lang='pug'>
+div.hijo
+  h1 Child component: {{numero}}
+    li
+      nuxt-link(to='/parent/child/grandChild') Call grandchild
+  nuxt-child(:numero='numero' @setParentText="event => $emit('setParentText', event)" @decrease='$emit(`decrease`)')
 </template>
 
 <script>
 export default {
   props:['numero'],
+  emits: ['decrease', 'setParentText'],
   data(){
-    return{
-      nombre: 'Christian',
-      numeroPadre: 0
-    }
-  },
-  mounted(){
-    this.$emit('nombreHijo', this.nombre);
+    return{}
   }
-
 }
 </script>
 
